@@ -13,10 +13,7 @@ chmod +x build.sh
 ### want to try on a dataset now?
 ```
  git clone https://huggingface.co/datasets/karan4d/machiavellian_synthetic_textbooks
-<<<<<<< HEAD
  python main.py machiavellian_synthetic_textbooks/machiavellian_books.jsonl
-=======
->>>>>>> 2fc03f9eaa3705c1e0bae2b1a1d7122e30ec29a4
 ```
 ### upload your file
 ```
@@ -25,10 +22,6 @@ chmod +x build.sh
 
 - file = jsonl
 - interpreter = your python
-<<<<<<< HEAD
-  
-=======
->>>>>>> 2fc03f9eaa3705c1e0bae2b1a1d7122e30ec29a4
 ### uninstall 
 ```
 sudo rm -rf openai_finetuning_framework
