@@ -21,14 +21,18 @@ class ProgressUploadFile(io.IOBase):
         self.progress_bar.close()
         self.file.close()
 
-def upload_file_to_openai(file_path, api_key):
+def upload_file_to_openai(file_path):
     try:
-        # Initialize the OpenAI client with the API key
-        client = openai.OpenAI(api_key=api_key)
+        # Retrieve API key from environment variable for security
+        api_key = os.getenv('OPENAI_API_KEY')
+        if not api_key:
+            raise ValueError("API key not found. Set the OPENAI_API_KEY environment variable.")
+
+        openai.api_key = api_key
 
         # Upload the file with streaming and progress bar
         with ProgressUploadFile(file_path) as file_to_upload:
-            response = client.files.create(
+            response = openai.File.create(
                 file=file_to_upload,
                 purpose="fine-tune"
             )
@@ -42,10 +46,6 @@ if __name__ == "__main__":
         print("Usage: python upload_openai.py <file_path>")
     else:
         file_path = argv[1]
-        api_key = os.getenv('OPENAI_API_KEY')
-        if not api_key:
-            print("API key not found. Set the OPENAI_API_KEY environment variable.")
-            sys.exit(1)
-        result = upload_file_to_openai(file_path, api_key)
+        result = upload_file_to_openai(file_path)
         if result:
             print("File uploaded successfully. Response:", result)
