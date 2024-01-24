@@ -12,3 +12,5 @@ chmod +x build.sh
 ./build.sh
 {intrpreter} main.py {file}
 ```
+#### want to try on a dataset now?
+ git clone https://huggingface.co/datasets/karan4d/machiavellian_synthetic_textbooks
