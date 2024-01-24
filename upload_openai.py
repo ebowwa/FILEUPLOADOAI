@@ -1,4 +1,3 @@
-
 import os
 import openai
 import httpx
@@ -22,13 +21,8 @@ class ProgressUploadFile(io.IOBase):
         self.progress_bar.close()
         self.file.close()
 
-def upload_file_to_openai(file_path):
+def upload_file_to_openai(file_path, api_key):
     try:
-        # Retrieve API key from environment variable for security
-        api_key = os.getenv('OPENAI_API_KEY')
-        if not api_key:
-            raise ValueError("API key not found. Set the OPENAI_API_KEY environment variable.")
-
         # Initialize the OpenAI client with the API key
         client = openai.OpenAI(api_key=api_key)
 
@@ -48,6 +42,10 @@ if __name__ == "__main__":
         print("Usage: python upload_openai.py <file_path>")
     else:
         file_path = argv[1]
-        result = upload_file_to_openai(file_path)
+        api_key = os.getenv('OPENAI_API_KEY')
+        if not api_key:
+            print("API key not found. Set the OPENAI_API_KEY environment variable.")
+            sys.exit(1)
+        result = upload_file_to_openai(file_path, api_key)
         if result:
             print("File uploaded successfully. Response:", result)
