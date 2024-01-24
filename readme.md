@@ -7,6 +7,7 @@ You have two way to manipulate/enhance LLMs; that being RAG and finetuning. Both
 ## How to use 
 ### install dependencies and set api key
 ```
+cd openai_finetuning_framework
 chmod +x build.sh
 ./build.sh
 ```
