@@ -1,7 +1,9 @@
-import sys
 import subprocess
+import sys
+
 import openai_config.api_key_manager
 import openai_config.upload_openai
+
 
 def main():
     # Check if the user wants to set an API key
@@ -9,7 +11,9 @@ def main():
         if len(sys.argv) != 3:
             print("Usage: python main.py --set-api-key <API_KEY>")
             return
-        api_key_manager.set_api_key(sys.argv[2])
+          
+        openai_config.api_key_manager.set_api_key(sys.argv[2])
+
         print("API key set successfully.")
         return
 
@@ -28,8 +32,8 @@ def main():
 
     file_path = sys.argv[1]
     try:
-        api_key = api_key_manager.get_api_key()
-        result = upload_openai.upload_file_to_openai(file_path)
+        openai_config.api_key_manager.get_api_key()
+        result =  openai_config.upload_openai.upload_file_to_openai(file_path)
         if result:
             print("File uploaded successfully. Response:", result)
         else:
