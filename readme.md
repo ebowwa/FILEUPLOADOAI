@@ -4,7 +4,7 @@ intended to assist in finetuning GPT models [https://platform.openai.com/finetun
 #### why finetune?
 You have two way to manipulate/enhance LLMs; that being RAG and finetuning. Both may reduce hallucination risk, but finetuning is better for behavior, style, tone, abilities whereas RAG is employing abilities to verify or inform models. you can also finetune to RAG more efficiently.
 
-today's models are the worst as we allow them, if you finetune for a task snd it performs better than gpt4 than congrats that's SOTA.
+today's models are the worst as we allow them, if you finetune for a task and it performs better than gpt4 than congrats that's SOTA.
 
 ## How to use 
 ### install dependencies and set api key
