@@ -21,3 +21,8 @@ chmod +x build.sh
 
 - file = jsonl
 - interpreter = your python
+### uninstall 
+```
+sudo rm -rf openai_finetuning_framework
+
+```
