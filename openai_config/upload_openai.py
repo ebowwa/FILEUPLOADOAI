@@ -22,6 +22,13 @@ class ProgressUploadFile(io.IOBase):
         self.file.close()
 
 def upload_file_to_openai(file_path):
+    # Check if the file is in JSONL format
+    if not file_path.endswith('.jsonl'):
+        raise ValueError('The file must be in JSONL format.')
+    # Check if the file size is too large (optional, based on expected data size)
+    # file_size = os.path.getsize(file_path)
+    # if file_size > SOME_MAX_SIZE:
+    #     raise ValueError('The file size exceeds the maximum allowed limit.')
     try:
         # Retrieve API key from environment variable for security
         api_key = os.getenv('OPENAI_API_KEY')
