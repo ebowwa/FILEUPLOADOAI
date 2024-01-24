@@ -1,4 +1,4 @@
-# oai Finetuning
+# oai finetuning
 intended to assist in finetuning GPT models [https://platform.openai.com/finetune]
 
 #### why finetune?
