@@ -14,7 +14,7 @@ chmod +x build.sh
 ### want to try on a dataset now?
 ```
  git clone https://huggingface.co/datasets/karan4d/machiavellian_synthetic_textbooks
- python main.py machiavellian_synthetic_textbooks/machiavellian_books.jsonl
+ python main.py openai_finetuning_framework/machiavellian_synthetic_textbooks/machiavellian_books.jsonl
 ```
 ### upload your file
 ```
