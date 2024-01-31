@@ -1,3 +1,6 @@
 openai
 httpx 
 tqdm
+google-generativeai
+# dotenv
+# pip install -q -U google-generativeai
